@@ -1,4 +1,4 @@
-package Q1_2;
+package CH01.Q1_2;
 
 public class QuestionB {	
 	public static boolean permutation(String s, String t) {

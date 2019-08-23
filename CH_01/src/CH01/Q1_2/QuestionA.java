@@ -1,4 +1,4 @@
-package Q1_2;
+package CH01.Q1_2;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package Q1_4;
+package CH01.Q1_4;
 
 import java.io.Console;
 

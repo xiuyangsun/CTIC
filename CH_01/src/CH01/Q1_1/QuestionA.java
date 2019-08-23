@@ -1,4 +1,4 @@
-package Q1_1;
+package CH01.Q1_1;
 import java.util.Arrays;
 
 public class QuestionA {

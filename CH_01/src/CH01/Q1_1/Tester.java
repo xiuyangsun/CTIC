@@ -1,4 +1,4 @@
-package Q1_1;
+package CH01.Q1_1;
 
 
 public class Tester {
