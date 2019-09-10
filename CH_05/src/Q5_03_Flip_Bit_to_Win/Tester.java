@@ -5,16 +5,16 @@ public class Tester {
 	public static boolean checkRange(int start, int range) {
 		for (int i = 0; i < range; i++) {
 			int value = start + i;
-			//int seqA = QuestionA.longestSequence(value);
+			int seqA = QuestionA.longestSequence(value);
 			int seqB = QuestionB.longestSequence(value);
 			int seqC = QuestionC.longestSequence(value);
 			int seqD = QuestionC.longestSequence(value);
 			
-			if (seqB != seqC || seqC != seqD) {
+			if (seqA != seqB || seqB != seqC || seqC != seqD) {
 				System.out.println("FAILURE on value " + value);
 				String xs = Integer.toBinaryString(value);
 				System.out.println(xs);
-				//System.out.println("A: " + seqA);
+				System.out.println("A: " + seqA);
 				System.out.println("B: " + seqB);
 				System.out.println("C: " + seqC);
 				System.out.println("D: " + seqD);
