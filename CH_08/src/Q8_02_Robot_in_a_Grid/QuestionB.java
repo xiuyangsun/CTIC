@@ -8,38 +8,40 @@ import CtCILibrary.AssortedMethods;
 
 public class QuestionB {
 	public static ArrayList<Point> getPath(boolean[][] maze) {
-		if (maze == null || maze.length == 0) return null;
+		int row = maze.length;
+		int col = maze[0].length;
 		ArrayList<Point> path = new ArrayList<Point>();
 		HashSet<Point> failedPoints = new HashSet<Point>();
-		if (getPath(maze, maze.length - 1, maze[0].length - 1, path, failedPoints)) {
+		if (row == 0 || col == 0) {
+			return null;
+		}
+		
+		if (getPath(maze, row - 1, col - 1, path, failedPoints)) {
 			return path;
 		}
+		
 		return null;
 	}
 	
 	public static boolean getPath(boolean[][] maze, int row, int col, ArrayList<Point> path, HashSet<Point> failedPoints) {
-		/* If out of bounds or not available, return.*/
-		if (col < 0 || row < 0 || !maze[row][col]) {
+		if (row < 0 || col < 0 || !maze[row][col]) {
+			return false;
+		}
+		Point p = new Point(row, col);
+		if (failedPoints.contains(p)) {
 			return false;
 		}
 		
-		Point p = new Point(row, col);
+		boolean isOriginal = row == 0 && col == 0;
 		
-		/* If we've already visited this cell, return. */
-		if (failedPoints.contains(p)) { 
-			return false;
-		}	
-		
-		boolean isAtOrigin = (row == 0) && (col == 0);
-		
-		/* If there's a path from the start to my current location, add my location.*/
-		if (isAtOrigin || getPath(maze, row, col - 1, path, failedPoints) || getPath(maze, row - 1, col, path, failedPoints)) {
+		if (isOriginal || getPath(maze, row - 1, col, path, failedPoints)  || getPath(maze, row, col - 1, path, failedPoints)) {
 			path.add(p);
 			return true;
 		}
 		
-		failedPoints.add(p); // Cache result
+		failedPoints.add(p);
 		return false;
+		
 	}
 	
 	public static void main(String[] args) {

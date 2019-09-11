@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CH_01/CtCILibrary"/>
+	<classpathentry kind="src" path="CH_01/src"/>
+	<classpathentry kind="output" path="CH_01/bin"/>
+</classpath>
