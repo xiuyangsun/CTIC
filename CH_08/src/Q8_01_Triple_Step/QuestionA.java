@@ -13,7 +13,7 @@ public class QuestionA {
 	}
 	
 	public static void main(String[] args) {
-		int n = 20;
+		int n = 4;
 		int ways = countWays(n);
 		System.out.println(ways);
 	}

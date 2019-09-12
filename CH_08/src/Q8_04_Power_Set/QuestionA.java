@@ -31,18 +31,22 @@ public class QuestionA {
 	public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set) {
 		ArrayList<ArrayList<Integer>> allSubSets = new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> initiaList =new ArrayList<Integer>();
+		
 		allSubSets.add(initiaList);
+		
 		for (int i = 0; i < set.size(); i++) {
-			System.out.println(allSubSets.size());
 			ArrayList<ArrayList<Integer>> moreSubSets = new ArrayList<ArrayList<Integer>>();
 			int item = set.get(i);
+			
 			for(ArrayList<Integer> subSet: allSubSets) {
+				
 				ArrayList<Integer> newSubSet = new ArrayList<Integer>();
 				newSubSet.addAll(subSet);
 				newSubSet.add(item);
+				
 				moreSubSets.add(newSubSet);
 			}
-			System.out.println(moreSubSets.toString());
+
 			allSubSets.addAll(moreSubSets);
 		}
 		return allSubSets;
